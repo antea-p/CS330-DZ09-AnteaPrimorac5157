@@ -16,7 +16,6 @@ import rs.ac.metropolitan.cs330_dz09_anteaprimorac5157.fake.fakeSastojci
 import rs.ac.metropolitan.cs330_dz09_anteaprimorac5157.fake.fakeSastojciForTorta
 import rs.ac.metropolitan.cs330_dz09_anteaprimorac5157.fake.fakeTorte
 
-// TODO: verify tests and adapt to be more like in sample exercise; remove comments
 @RunWith(AndroidJUnit4::class)
 class DBTest {
     private lateinit var db: AppDatabase
@@ -38,13 +37,13 @@ class DBTest {
     }
 
     @Test
-    fun upsertAndGetRecept() = runTest {
+    fun upsertAndSearchRecept() = runTest {
         // Given
         val recept = fakeRecepti[0]
 
         // When
         val id = dao.upsertRecept(recept)
-        val fetchedRecept = dao.searchReceptByName("Recept 1").first()
+        val fetchedRecept = dao.getReceptByName("Recept 1").first()
 
         // Then
         assert(fetchedRecept.isNotEmpty())

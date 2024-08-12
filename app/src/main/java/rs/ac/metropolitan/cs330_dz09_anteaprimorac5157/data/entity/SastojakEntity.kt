@@ -3,8 +3,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "sastojak")
-data class Sastojak(
-    @PrimaryKey(autoGenerate = true) val id: Long? = null,
+data class SastojakEntity(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long?,
     val naziv: String,
     val kolicina: Int,
     val jedinicaMere: String,
